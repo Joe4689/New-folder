@@ -1,0 +1,17 @@
+name: hello-world_part2
+
+on: push
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "This is the first job"
+
+  second-job:
+    needs: first-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 2
+        run: echo "This job runs only if the first one succeeded"
